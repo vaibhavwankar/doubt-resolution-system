@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -7,10 +8,10 @@ import { Observable, of } from 'rxjs';
 export class StatsService {
 
   reports = {
-    stat: { totalDoubtsAsked: 23, totalDoubtsResolved: 12, totalDoubtsEscalated: 3, totalAvgTime: 37 },
+    stat: { totalDoubtsAsked: 3, totalDoubtsResolved: 1, totalDoubtsEscalated: 0, totalAvgTime: 0 },
     report: [
-      { id: '2', name: 'Ayush', report: { doubtsAccepted: 16, doubtsResolved: 14, doubtsEscalated: 13, avgTime: 3 } },
-      { id: '3', name: 'Aakash', report: { doubtsAccepted: 16, doubtsResolved: 14, doubtsEscalated: 13, avgTime: 3 } },
+      { id: '2', name: 'Ayush', report: { doubtsAccepted: 0, doubtsResolved: 0, doubtsEscalated: 0, avgTime: 0 } },
+      { id: '3', name: 'Aakash', report: { doubtsAccepted: 0, doubtsResolved: 0, doubtsEscalated: 0, avgTime: 0 } },
     ]
   }
 
@@ -44,11 +45,18 @@ export class StatsService {
       this.reports.report[index].report.avgTime = totalSumOfTime / (doubtsSolvedSoFar + 1);
       this.reports.report[index].report.doubtsResolved += 1;
       this.reports.stat.totalDoubtsResolved += 1;
+      
+      const sumAvgTime = this.reports.report.map(item=>item.report.avgTime).reduce((prev,curr)=>prev+curr,0);
+      const totalTAs = this.reports.report.length;
+      if(length){
+        this.reports.stat.totalAvgTime = (sumAvgTime/totalTAs);
+      }
+
     }
   }
 
   updateTotalDoubtsAsked() {
     this.reports.stat.totalDoubtsAsked += 1;
   }
-
+  
 }
