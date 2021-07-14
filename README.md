@@ -1,27 +1,27 @@
-# DoubtResolutionSystem
+Development server
+Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+Introduction
+This is a mock doubt resolution system with below features. Some of the features of this system are:
 
-## Development server
+Students can raise doubts. Each doubt has a title and description.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Students can add comments on the doubts.
 
-## Code scaffolding
+Students can see all the doubts raised by them or other users on the home page. Each doubt has a card with doubt details as shown in the wireframe.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Teaching Assistants (TAs) can see all the unresolved doubts that are not being resolved by other TAs. They can accept one of these doubts at a time and start solving that doubt.
 
-## Build
+After accepting a doubt, they go to a doubt resolution page which shows details of that doubt. They can resolve this doubt by adding an answer or if they are unable to solve it they can escalate the doubt so that some other TA can solve it. After resolving or escalating, TA goes back to the list page to accept new doubts.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Teachers should be able to see a dashboard with the following stats of the system.
 
-## Running unit tests
+Doubts Asked: Total no. of doubts in the system till now.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Doubts Resolved: Total no. of resolved doubts Doubts Escalated: Total no. of doubts that were escalated.
 
-## Running end-to-end tests
+Avg. Doubt Resolution Time: Doubt Resolution time is basically the time at which doubt was resolved - time at which doubt was created. Calculate avg of Doubt Resolution time for all the resolved doubts.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+TA Report: A list of all the TAs in the system. Each row shows stats for that TA. The stats are: Doubt accepted: Total no of times doubt accepted Doubt resolved: Total no of doubts resolved Doubt escalated: Total no of times doubt accepted Avg. Activity Time: Avg of (Time at which doubt resolved - Time at which doubt accepted by TA)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Wireframe: https://whimsical.com/ninjastechassignment-XgjFweDBoTWCMXhg7qBbiJ
