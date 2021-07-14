@@ -1,0 +1,37 @@
+<h2>Dashboard</h2>
+<mat-grid-list class="grid" cols="4" rowHeight="2:1" [gutterSize]="'10px'">
+    <mat-grid-tile class="row">
+        <p style="text-align: center;">
+            {{totalDoubtsAsked}} <br /> Doubts Asked
+        </p>
+    </mat-grid-tile>
+    <mat-grid-tile class="row">
+        <p style="text-align: center;">
+            {{totalDoubtsResolved}} <br /> Doubts Resolved
+        </p>
+    </mat-grid-tile>
+    <mat-grid-tile class="row">
+        <p style="text-align: center;">
+            {{totalDoubtsEscalated}} <br /> Doubts Escalated
+        </p>
+    </mat-grid-tile>
+    <mat-grid-tile class="row">
+        <p style="text-align: center;">
+            {{totalAvgTime}} min <br /> Avg. Doubt Resolution Time
+        </p>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<mat-card class="doubt-card" appearance="outline">
+    <mat-card-header>
+        <mat-card-title>TAs Report</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-list-item *ngFor="let report of reports"> 
+            <mat-card class="comment-card">{{ report.name}}<br> Doubts Accepted:{{report.report.doubtsAccepted}} | Doubts Resolved:{{report.report.doubtsResolved}} | Doubts Escalated:{{report.report.doubtsEscalated}} | Avg. Doubt Resolution Time: {{report.report.avgTime}} min</mat-card>
+        </mat-list-item>
+    </mat-card-content>
+
+</mat-card>

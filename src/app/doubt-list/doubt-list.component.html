@@ -1,0 +1,34 @@
+<h2>Home</h2>
+<mat-list-item *ngFor="let doubt of doubts">
+
+    <mat-card class="doubt-card" appearance="outline">
+    
+        <button mat-stroked-button  *ngIf="doubt.status=='RESOLVED'" style="float: right;background-color: green;opacity: 0.8;">Resolved</button>    
+        <mat-card-header>
+            <mat-card-title>{{doubt.title}}</mat-card-title>
+            <mat-card-subtitle>{{ doubt.description }}</mat-card-subtitle>
+        </mat-card-header>
+        <p *ngIf="doubt.status=='RESOLVED'"><b>Answer:</b> {{doubt.answer}}</p>
+        <mat-divider></mat-divider>
+        <p>{{doubt.Comments.length}} Comment</p>
+
+        <mat-card-content>
+            <mat-list-item *ngFor="let comment of doubt.Comments">
+                <mat-card class="comment-card">{{ comment.by}}: {{comment.comment}}</mat-card>
+                <br />
+            </mat-list-item>
+        </mat-card-content>
+
+        <mat-card-content>
+            <form #myform="ngForm" (ngSubmit)="addComment(myform,doubt)">
+                <mat-form-field class="add-comment" appearance="fill">
+                    <mat-label>Add comment</mat-label>
+                    <input matInput name="comment" ngModel>
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="comment-button" type="submit">Comment</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <br />
+
+</mat-list-item>

@@ -1,0 +1,21 @@
+.raise-doubt{
+    border: 1px solid #000;
+    margin: 0 auto;
+    width: 40%;
+    background-color: #f5f5f5 !important;
+   }
+
+h2 {
+    text-align: center;
+}
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  

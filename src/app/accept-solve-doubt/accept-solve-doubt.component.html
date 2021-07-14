@@ -1,0 +1,39 @@
+<h2>Solve Doubts</h2>
+<div style="display: flex;">
+    
+        <mat-card class="doubt-card" appearance="outline">
+            <mat-card-header>
+                <mat-card-title>{{doubt.title}}</mat-card-title>
+                <mat-card-subtitle>{{ doubt.description }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <p>{{doubt.Comments.length}} Comment</p>
+    
+            <mat-card-content>
+                <mat-list-item *ngFor="let comment of doubt.Comments">
+                    <mat-card class="comment-card">{{ comment.by}}: {{comment.comment}}</mat-card>
+                    <br />
+                </mat-list-item>
+            </mat-card-content>
+        </mat-card>
+        <br/>
+    
+        <mat-card class="doubt-card" appearance="outline">
+            <mat-card-header>
+                <mat-card-title>Answer</mat-card-title>
+            </mat-card-header>
+    
+            <mat-card-content>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <textarea matInput placeholder="Answer" [(ngModel)]="answer"></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="answer-button" (click)="answerDoubt()">Answer</button>
+            </mat-card-content>
+            <br/>
+            <hr/>
+            
+            <button mat-stroked-button color="primary" class="escalate-button" (click)="escalate()">Escalate</button>
+        </mat-card>
+       
+    
+</div>

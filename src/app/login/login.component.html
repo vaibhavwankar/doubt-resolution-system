@@ -1,0 +1,15 @@
+<h2>Login</h2>
+<mat-card class="raise-doubt" appearance="outline">
+<form #myform="ngForm" (ngSubmit)="login(myform)">
+    UserId
+    <mat-form-field class="example-full-width" appearance="outline">
+        <input matInput placeholder="userId" name="id" ngModel>
+    </mat-form-field>
+    Password
+    <mat-form-field class="example-full-width" appearance="outline">
+        <input type="password"  matInput placeholder="Password" name="password" ngModel>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="doubt-button" type="submit">Login</button>
+</form>
+</mat-card>

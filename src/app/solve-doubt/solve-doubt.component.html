@@ -1,0 +1,10 @@
+<h2>Solve Doubts</h2>
+<mat-card-content appearance="outline">
+    <mat-list-item *ngFor="let doubt of unsolvedDoubts">
+        <mat-card class="doubt-card">
+            {{doubt.title}}
+            <button  mat-stroked-button color="primary" class="button-accept" (click)="accept(doubt)">Accept</button>
+        </mat-card>
+        <br />
+    </mat-list-item>
+</mat-card-content>

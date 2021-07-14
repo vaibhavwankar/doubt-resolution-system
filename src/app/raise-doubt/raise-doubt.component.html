@@ -1,0 +1,15 @@
+<h2>Raise Doubt</h2>
+<mat-card class="raise-doubt" appearance="outline">
+    <form #myform="ngForm" (ngSubmit)="addDoubt(myform)">
+        Title
+        <mat-form-field class="example-full-width" appearance="outline">
+            <input matInput placeholder="Title" name="title" ngModel>
+        </mat-form-field>
+        Description
+        <mat-form-field class="example-full-width" appearance="outline">
+            <input matInput placeholder="Description" name="description" ngModel>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="doubt-button" type="submit">Ask Doubt</button>
+    </form>
+</mat-card>

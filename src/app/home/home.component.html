@@ -1,0 +1,18 @@
+<mat-toolbar>
+    <img width="40" height="40" src="assets/logo.jpeg">
+
+    <a mat-button routerLink="/home" *ngIf="studentAccount">Home</a>
+
+    <span *ngIf="studentAccount"> | </span>
+    <a mat-button routerLink="/home/raise-doubt" *ngIf="studentAccount">Raise Doubt</a>
+
+    <span *ngIf="taAccount"> | </span>
+    <a mat-button routerLink="/home/solve-doubt" *ngIf="taAccount">Solve Doubt</a>
+
+    <span *ngIf="teacherAccount"> | </span>
+    <a mat-button routerLink="/home/dashboard" *ngIf="teacherAccount">Dashboard</a>
+
+    <span class="header-spacer"></span>
+    <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+</mat-toolbar>
+<router-outlet *ngIf="routerOutlet"></router-outlet>
